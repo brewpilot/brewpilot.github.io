@@ -1,0 +1,44 @@
+// Override Bootstrap variables
+$primary: #8495F9;               // Periwinkle Blue
+$secondary: #FF5730;             // Bright Coral
+$success: #28a745;               // Default Bootstrap success
+$info: #17a2b8;                  // Default Bootstrap info
+$warning: #ffc107;               // Default Bootstrap warning
+$danger: #dc3545;                // Default Bootstrap danger
+$light: #EBEBEB;                 // Light Gray
+$dark: #14142E;                  // Dark Navy
+
+// Additional theme variables
+$body-color: $dark;              // Body text color
+$body-bg: $light;                // Background color
+$link-color: $primary;           // Link color (defaults to primary)
+
+
+// Custom fonts
+@font-face {
+  font-family: 'Alliance No.1 Semibold';
+  src: url('../fonts/AllianceNo1-Semibold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Alliance No.1 Medium';
+  src: url('../fonts/AllianceNo1-Medium.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Alliance No.1 Regular';
+  src: url('../fonts/AllianceNo1-Regular.otf') format('opentype');
+}
+
+// Apply custom fonts to text elements
+h1, h2, h3 {
+  font-family: 'Alliance No.1 Semibold', sans-serif;
+}
+
+h4, h5, h6 {
+  font-family: 'Alliance No.1 Medium', sans-serif;
+}
+
+body, p {
+  font-family: 'Alliance No.1 Regular', sans-serif;
+}

@@ -1,0 +1,22 @@
+// Header-specific styles
+.custom-header {
+  background-color: $dark !important;
+  color: $light;
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-header img {
+  height: 40px;
+}
+
+.custom-header nav a {
+  color: $light;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.custom-header nav a:hover {
+  text-decoration: underline;
+}

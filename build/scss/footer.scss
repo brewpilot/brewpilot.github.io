@@ -1,0 +1,34 @@
+// Make the footer sticky to the bottom of the page
+html, body {
+  height: 100%; /* Full-height for the page */
+  display: flex;
+  flex-direction: column; /* Vertical stacking of elements */
+  margin: 0; /* Remove default margin */
+}
+
+main {
+  flex: 1; /* Allow main content to expand and push the footer down */
+}
+
+.custom-footer {
+  background-color: $secondary !important; 
+  color: $light;
+  text-align: center; 
+  padding: 20px 0;
+  width: 100%; /* Ensure full width */
+  flex-shrink: 0; /* Prevent footer from shrinking */
+  border-top: 1px solid $dark;
+}
+
+.custom-footer p {
+  margin: 0; /* Remove default paragraph margins */
+}
+
+.custom-footer a {
+  color: $light; /* Use light text color for links */
+  text-decoration: underline; /* Underline links */
+}
+
+.custom-footer a:hover {
+  text-decoration: none; /* Remove underline on hover */
+}
