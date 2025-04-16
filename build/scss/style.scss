@@ -1,44 +1,44 @@
-// Override Bootstrap variables
-$primary: #8495F9;               // Periwinkle Blue
-$secondary: #FF5730;             // Bright Coral
-$success: #28a745;               // Default Bootstrap success
-$info: #17a2b8;                  // Default Bootstrap info
-$warning: #ffc107;               // Default Bootstrap warning
-$danger: #dc3545;                // Default Bootstrap danger
-$light: #EBEBEB;                 // Light Gray
-$dark: #14142E;                  // Dark Navy
+// Variables
+$color-primary: #6366f1;
+$color-background: #fffefb;
+$color-text: #0f172a;
+$color-text-muted: #64748b;
+$color-border: #e2e8f0;
+$color-nav: #14142e;
+$color-light: #ebebeb;
 
-// Additional theme variables
-$body-color: $dark;              // Body text color
-$body-bg: $light;                // Background color
-$link-color: $primary;           // Link color (defaults to primary)
+$font-family-base: "Outfit", sans-serif;
+$transition-base: transform 0.2s ease;
 
+// Custom Bootstrap overrides
+$theme-colors: (
+  "primary": $color-primary,
+  "secondary": $color-text-muted,
+);
 
-// Custom fonts
-@font-face {
-  font-family: 'Alliance No.1 Semibold';
-  src: url('../fonts/AllianceNo1-Semibold.otf') format('opentype');
+$body-bg: $color-background;
+$body-color: $color-text;
+
+// Mixins
+@mixin hover-lift {
+  transition: $transition-base;
+  &:hover {
+    transform: translateY(-1px);
+  }
 }
 
-@font-face {
-  font-family: 'Alliance No.1 Medium';
-  src: url('../fonts/AllianceNo1-Medium.otf') format('opentype');
+// Global styles
+
+html,
+body {
+  height: 100%; /* Full-height for the page */
+  display: flex;
+  flex-direction: column; /* Vertical stacking of elements */
+  margin: 0; /* Remove default margin */
+  font-family: $font-family-base;
 }
 
-@font-face {
-  font-family: 'Alliance No.1 Regular';
-  src: url('../fonts/AllianceNo1-Regular.otf') format('opentype');
-}
-
-// Apply custom fonts to text elements
-h1, h2, h3 {
-  font-family: 'Alliance No.1 Semibold', sans-serif;
-}
-
-h4, h5, h6 {
-  font-family: 'Alliance No.1 Medium', sans-serif;
-}
-
-body, p {
-  font-family: 'Alliance No.1 Regular', sans-serif;
+main {
+  flex: 1; /* Allow main content to expand and push the footer down */
+  margin-top: 80px;
 }

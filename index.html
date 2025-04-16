@@ -1,53 +1,204 @@
 <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="static/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
-<link rel="apple-touch-icon" href="static/favicon/apple-touch-icon.png">
-<link rel="manifest" href="static/favicon/site.webmanifest">
-<link rel="mask-icon" href="static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="static/favicon/favicon.ico">
+<link
+  rel="icon"
+  type="image/png"
+  sizes="32x32"
+  href="static/favicon/favicon-32x32.png"
+/>
+<link
+  rel="icon"
+  type="image/png"
+  sizes="16x16"
+  href="static/favicon/favicon-16x16.png"
+/>
+<link rel="apple-touch-icon" href="static/favicon/apple-touch-icon.png" />
+<link rel="manifest" href="static/favicon/site.webmanifest" />
+<link
+  rel="mask-icon"
+  href="static/favicon/safari-pinned-tab.svg"
+  color="#5bbad5"
+/>
+<link rel="shortcut icon" href="static/favicon/favicon.ico" />
 
 <!-- Optional: Add metadata -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="static/favicon/mstile-150x150.png">
-<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta
+  name="msapplication-TileImage"
+  content="static/favicon/mstile-150x150.png"
+/>
+<meta name="theme-color" content="#ffffff" />
 
 <!-- Include Custom CSS -->
-<link rel="stylesheet" href="static/custom.css">
+<link rel="stylesheet" href="static/custom.css" />
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+/>
+
+<script
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  defer
+></script>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brew Pilot</title>
-</head>
-<body>
-  <!-- Header -->
-  <header class="custom-header">
-    <div class="container d-flex justify-content-between align-items-center py-3">
-      <!-- Logo -->
-      <a href="#" class="text-decoration-none">
-        <img src="static/images/brand/logotype_blue.png" alt="Brew Pilot Logo">
-      </a>
-      <!-- Navigation -->
-      <nav>
-        <!--
-          <a href="#" class="text-white text-decoration-none me-3">Home</a>
-          <a href="#" class="text-white text-decoration-none me-3">About</a>
-          <a href="#" class="text-white text-decoration-none">Contact</a>
-        -->
-      </nav>
-    </div>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew Pilot</title>
+  </head>
+  <body
+    x-data="{
+  isHovered: null,
+  features: [
+      { title: 'AI-Powered Content', desc: 'Generate engaging content tailored to your brand voice', icon: '🤖' },
+      { title: 'Brand Consistency', desc: 'Maintain consistent messaging across all channels', icon: '✨' },
+      { title: 'Time Savings', desc: 'Create content in minutes instead of hours', icon: '⚡' }
+  ]
+}"
+  >
+    <!-- Header -->
+    <header class="custom-header">
+      <div
+        class="container d-flex justify-content-between align-items-center py-3"
+      >
+        <!-- Logo -->
+        <a href="#" class="text-decoration-none">
+          <img
+            src="static/images/brand/logotype_blue.png"
+            alt="Brew Pilot Logo"
+          />
+        </a>
+        <!-- Navigation -->
+        <nav class="d-flex justify-content-md-end gap-4">
+          <a href="#" class="footer-link">Home</a>
+          <a href="#features" class="footer-link">Features</a>
+          <a href="#contact" class="footer-link">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-  <section class="hero">
-    <h1 class="hero-title">Coming Soon</h1>
-    <p class="hero-subtitle">We're working hard to bring you something amazing. Stay tuned!</p>
-  </section>
+    <main class="container py-5">
+      <!-- Hero -->
+      <section class="text-center mb-5">
+        <h1 class="display-4 fw-medium mb-4">
+          Transform Your Content Creation
+        </h1>
+        <p class="lead text-muted mb-5">
+          AI-powered content generation tailored to your brand
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+          <button class="btn btn-primary text-white px-4 py-2">
+            Early Access
+          </button>
+          <button class="btn btn-outline-secondary px-4 py-2">
+            Request Demo
+          </button>
+        </div>
+      </section>
 
-  <!-- Footer -->
-  <footer class="custom-footer">
-    <p>&copy; 2025 Brew Pilot. All rights reserved.</p>
-  </footer>
-</body>
+      <!-- Features -->
+      <section id="features" class="row g-4 mb-6">
+        <template x-for="feature in features">
+          <div class="col-md-4">
+            <div class="feature-card p-4">
+              <span class="feature-icon mb-3" x-text="feature.icon"></span>
+              <h3 class="h4 mb-3" x-text="feature.title"></h3>
+              <p class="text-muted h-25 mb-0" x-text="feature.desc"></p>
+            </div>
+          </div>
+        </template>
+      </section>
+
+      <!-- Screenshots -->
+      <section class="screenshots mb-5">
+        <h2 class="text-center h2 fw-medium mb-5">See It In Action</h2>
+        <div>
+          <div class="screenshot-card row align-items-center mb-5">
+            <div class="col-12 col-md-6">
+              <h3 class="h4 mb-3">Content Dashbaord</h3>
+              <p class="text-secondary">
+                Visualize your content workflow with an intuitive Kanban-style
+                dashboard. Track progress, manage workflows, and keep everything
+                organized in one central hub.
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+              <img
+                src="static/images/screenshots/screenshot-1.png"
+                alt="Company Setup Screenshot"
+                class="img-fluid rounded-3"
+              />
+            </div>
+          </div>
+          <div class="screenshot-card row align-items-center mb-5">
+            <div class="col-12 col-md-6 order-md-2">
+              <h3 class="h4 mb-3">AI Content Assistant</h3>
+              <p class="text-secondary">
+                Chat naturally with our AI to create content. Get step-by-step
+                guidance, creative suggestions, and real-time assistance while
+                maintaining your brand voice and style.
+              </p>
+            </div>
+            <div class="col-12 col-md-6 order-md-1">
+              <img
+                src="static/images/screenshots/screenshot-2.png"
+                alt="Content Generation Screenshot"
+                class="img-fluid rounded-3"
+              />
+            </div>
+          </div>
+          <div class="screenshot-card row align-items-center">
+            <div class="col-12 col-md-6">
+              <h3 class="h4 mb-3">Review and Feedback</h3>
+              <p class="text-secondary">
+                Provide direct feedback to the AI about what works and what
+                needs improvement. The AI learns from your feedback and can
+                instantly regenerate content based on your specific requirements
+                and preferences.
+              </p>
+            </div>
+            <div class="col-12 col-md-6">
+              <img
+                src="static/images/screenshots/screenshot-3.png"
+                alt="Brand Voice Analysis Screenshot"
+                class="img-fluid rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact and waitlist -->
+      <section
+        id="contact"
+        class="waitlist-section bg-white rounded-3 p-5 border"
+      >
+        <h2 class="text-center h2 fw-medium mb-4">Join the Waitlist</h2>
+        <p class="text-center text-muted mb-4">
+          Be the first to experience the future of content creation
+        </p>
+        <form class="row justify-content-center g-3">
+          <div class="col-md-8 col-lg-6">
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+              <button type="submit" class="btn btn-primary text-white">
+                Join Now
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="custom-footer">
+      <p>&copy; 2025 Brew Pilot. All rights reserved.</p>
+    </footer>
+  </body>
 </html>
