@@ -2,15 +2,12 @@
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 
-
 // Import custom and specific styles
 @import "style";
-@import "header"; 
+@import "header";
 @import "feature";
 @import "footer";
-
-
+@import "pdf-container";
 
 // Import Bootstrap styles AFTER overriding variables
 @import "bootstrap/bootstrap";
-
