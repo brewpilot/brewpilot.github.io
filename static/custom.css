@@ -21,6 +21,7 @@ main {
   align-items: center;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 
 .custom-header img {
