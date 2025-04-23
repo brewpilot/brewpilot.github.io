@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form Test</title>
+</head>
+<body>
+  <h1>Contact Form</h1>
+  <form id="contactForm">
+    <label>
+      Name:
+      <input type="text" name="name" required>
+    </label><br><br>
+
+    <label>
+      Email:
+      <input type="email" name="email" required>
+    </label><br><br>
+
+    <label>
+      Company Name:
+      <input type="text" name="company_name" required>
+    </label><br><br>
+
+    <label>
+      Company Website:
+      <input type="text" name="company_domain" pattern="^(?!\-)(?:[a-zA-Z0-9\-]{1,63}(?<!\-)\.)+[a-zA-Z]{2,63}$" required>
+    </label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const webhookURL = 'https://hook.us2.make.com/8tl9vp2tuzlr4yqdv5r3gu3q8wmntlqd';
+
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        await fetch(webhookURL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        alert('Form submitted successfully!');
+        form.reset();
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        alert('Failed to submit form.');
+      }
+    });
+  </script>
+</body>
+</html>
