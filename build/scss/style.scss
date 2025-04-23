@@ -42,3 +42,10 @@ main {
   flex: 1; /* Allow main content to expand and push the footer down */
   margin-top: 80px;
 }
+
+h1,
+h2,
+h3,
+p {
+  cursor: default;
+}

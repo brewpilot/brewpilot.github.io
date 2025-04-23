@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Brew Pilot</title>
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="static/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="static/favicon/favicon-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="static/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="static/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="static/favicon/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <link rel="shortcut icon" href="static/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="static/favicon/mstile-150x150.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Custom CSS & Fonts -->
+    <link rel="stylesheet" href="static/custom.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="custom-header">
+      <div
+        class="container d-flex justify-content-between align-items-center py-3"
+      >
+        <!-- Logo -->
+        <a href="/" class="text-decoration-none">
+          <img
+            src="static/images/brand/logotype_blue.png"
+            alt="Brew Pilot Logo"
+          />
+        </a>
+        <!-- Navigation -->
+        <nav class="d-flex justify-content-md-end gap-4">
+          <a href="/">Home</a>
+          <a href="/#features">Features</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Form -->
+    <main class="form-container">
+      <form id="contactForm">
+        <h1 class="mb-4 text-center">Contact Us</h1>
+
+        <label>
+          Name
+          <input type="text" name="name" required />
+        </label>
+
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+
+        <label>
+          Company Name
+          <input type="text" name="company_name" required />
+        </label>
+
+        <label>
+          Company Website
+          <input
+            type="text"
+            name="company_domain"
+            pattern="^(?!\\-)(?:[a-zA-Z0-9\\-]{1,63}(?<!\\-)\\.)+[a-zA-Z]{2,63}$"
+            required
+            placeholder="example.com"
+            title="Please enter a valid domain (e.g. example.com)"
+          />
+        </label>
+
+        <button type="submit" class="btn btn-primary text-white">Submit</button>
+        <p id="thankYouMessage" class="thank-you-message" style="display: none">
+          Thank you! We'll be in touch soon.
+        </p>
+      </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer__content container">
+        <p class="mb-0">&copy; 2025 Brew Pilot. All rights reserved.</p>
+        <nav class="footer__nav">
+          <a href="/termsgeneral.html">Terms of Use</a>
+          <span class="divider">|</span>
+          <a href="/privacy.html">Privacy Policy</a>
+          <span class="divider">|</span>
+          <a href="/sms_policy.html">Notification Policy</a>
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Script -->
+    <script>
+      const webhookURL =
+        "https://hook.us2.make.com/8tl9vp2tuzlr4yqdv5r3gu3q8wmntlqd";
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", async function (event) {
+          event.preventDefault();
+
+          const form = event.target;
+          if (!form.checkValidity()) {
+            form.reportValidity();
+            return;
+          }
+
+          const formData = new FormData(form);
+          const data = Object.fromEntries(formData.entries());
+
+          try {
+            await fetch(webhookURL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(data),
+            });
+            alert("Form submitted successfully!");
+            form.reset();
+            window.location.href = "thank-you.html";
+          } catch (error) {
+            console.error("Error submitting form:", error);
+            alert("Failed to submit form.");
+          }
+        });
+    </script>
+  </body>
+</html>
