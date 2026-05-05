@@ -38,11 +38,17 @@ p {
 
 .custom-header nav a {
   color: #ebebeb;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+  padding: 0 1rem;
   text-decoration: none;
 }
 
 .custom-header nav a.nav-sign-in {
+  border-radius: 6px;
   background: linear-gradient(to right, #2563eb, #9333ea);
+  color: white;
 }
 .custom-header nav a.nav-sign-in:hover {
   background: linear-gradient(to right, #1d4ed8, #7e22ce);
