@@ -16,12 +16,12 @@
 .custom-header nav a {
   color: $color-light;
   text-decoration: none;
-  margin-right: 15px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
+}
+
+.custom-header nav a.nav-sign-in {
+  background: linear-gradient(to right, #2563eb, #9333ea);
 
   &:hover {
-    border-bottom: 2px solid lavender;
+    background: linear-gradient(to right, #1d4ed8, #7e22ce);
   }
 }

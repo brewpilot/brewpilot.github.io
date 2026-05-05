@@ -39,13 +39,13 @@ p {
 .custom-header nav a {
   color: #ebebeb;
   text-decoration: none;
-  margin-right: 15px;
-  border-bottom: 2px solid transparent;
-  padding-bottom: 3px;
-  transition: color 0.2s ease, border-bottom 0.2s ease;
 }
-.custom-header nav a:hover {
-  border-bottom: 2px solid lavender;
+
+.custom-header nav a.nav-sign-in {
+  background: linear-gradient(to right, #2563eb, #9333ea);
+}
+.custom-header nav a.nav-sign-in:hover {
+  background: linear-gradient(to right, #1d4ed8, #7e22ce);
 }
 
 .feature-card {
