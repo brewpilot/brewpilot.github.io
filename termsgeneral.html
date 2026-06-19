@@ -36,6 +36,11 @@
   rel="stylesheet"
 />
 
+<script
+  src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+  defer
+></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js"></script>
 <script>
   const url = "/legal/Terms-of-Use.pdf";
@@ -75,26 +80,8 @@
   </head>
   <body>
     <!-- Header -->
-    <header class="custom-header">
-      <div
-        class="container d-flex justify-content-between align-items-center py-3"
-      >
-        <!-- Logo -->
-        <a href="/" class="text-decoration-none">
-          <img
-            src="static/images/brand/logotype_blue.png"
-            alt="Brew Pilot Logo"
-          />
-        </a>
-        <!-- Navigation -->
-        <nav class="d-flex justify-content-md-end align-items-md-center gap-2">
-          <a class="nav-home" href="/">Home</a>
-          <a href="/#features">Features</a>
-          <a href="/#previews">Preview</a>
-          <a href="https://app.brewpilot.com" target="_blank">Log in</a>  
-          <a class="nav-sign-in" href="https://login.brewpilot.com/authorize?response_type=code&client_id=9G1eDIH7kdnwTHDToqsXoQ7q6g6pRw9M&redirect_uri=https%3A%2F%2Fapp.brewpilot.com%2Fcallback&audience=BrewPilotBackEnd&scope=openid%20profile%20email&screen_hint=signup" target="_blank">Start trial</a>
-        </nav>
-      </div>
+    <header class="custom-header" x-data x-init="fetch('/components/nav_header.html').then(res => res.text()).then(html => $el.innerHTML = html)">
+      <!-- Header will load into here -->
     </header>
 
     <main class="mb-4">
@@ -102,19 +89,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer__content container">
-          <p class="mb-0">&copy; 2025 Brew Pilot. All rights reserved.</p>
-          <nav class="footer__nav">
-            <a href="/contact.html">Contact Us</a>
-            <span class="divider">|</span>
-            <a href="/termsgeneral.html">Terms of Use</a>
-            <span class="divider">|</span>
-            <a href="/privacy.html">Privacy Policy</a>
-            <span class="divider">|</span>
-            <a href="/sms_policy.html">Notification Policy</a>
-          </nav>
-        </div>
-      </footer>
+    <footer class="footer" x-data x-init="fetch('/components/nav_footer.html').then(res => res.text()).then(html => $el.innerHTML = html)">
+      <!-- Footer will load into here -->
+    </footer>
   </body>
 </html>
