@@ -13,6 +13,10 @@ main {
   margin-top: 80px;
 }
 
+main section[id] {
+  scroll-margin-top: 80px; /* Allow a margin to account for the header navigation bar when jumping to sections on the main page */
+}
+
 h1, .h1,
 h2,
 .h2,
@@ -36,6 +40,15 @@ p {
   height: 40px;
 }
 
+@media (max-width: 800px) {
+  .custom-header img {
+    width: 50px;
+    height: 40px;
+    object-fit: cover;
+    object-position: left center;
+  }
+}
+
 .custom-header nav a {
   color: #ebebeb;
   display: inline-flex;
@@ -54,11 +67,20 @@ p {
   background: linear-gradient(to right, #1d4ed8, #7e22ce);
 }
 
+@media (max-width: 600px) {
+  .custom-header nav a.nav-home {
+    display: none;
+  }
+}
+
 .feature-card {
   border: 1px solid lightgray;
   border-radius: 0.5rem;
   margin-bottom: 4rem;
   background-color: white;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease;
 }
 .feature-card:hover {

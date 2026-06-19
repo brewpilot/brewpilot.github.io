@@ -72,10 +72,11 @@
         </a>
         <!-- Navigation -->
         <nav class="d-flex justify-content-md-end align-items-md-center gap-2">
-          <a href="#">Home</a>
+          <a class="nav-home" href="#">Home</a>
           <a href="#features">Features</a>
-          <a href="#contact">Contact</a>
-          <a class="nav-sign-in" href="https://app.brewpilot.com" target="_blank">Sign In</a>
+          <a href="#previews">Preview</a>
+          <a href="https://app.brewpilot.com" target="_blank">Log in</a>  
+          <a class="nav-sign-in" href="https://login.brewpilot.com/authorize?response_type=code&client_id=9G1eDIH7kdnwTHDToqsXoQ7q6g6pRw9M&redirect_uri=https%3A%2F%2Fapp.brewpilot.com%2Fcallback&audience=BrewPilotBackEnd&scope=openid%20profile%20email&screen_hint=signup" target="_blank">Start trial</a>
         </nav>
       </div>
     </header>
@@ -89,20 +90,12 @@
         <p class="lead text-muted mb-5">
           AI-powered content generation tailored to your brand
         </p>
-        <!-- <div class="d-flex justify-content-center gap-3">
-          <button class="btn btn-primary text-white px-4 py-2">
-            Early Access
-          </button>
-          <button class="btn btn-outline-secondary px-4 py-2">
-            Request Demo
-          </button>
-        </div> -->
       </section>
 
       <!-- Features -->
       <section id="features" class="row g-4 mb-6">
         <template x-for="feature in features">
-          <div class="col-md-4">
+          <div class="col-md-4 d-flex">
             <div class="feature-card p-4">
               <span class="feature-icon mb-3" x-text="feature.icon"></span>
               <h3 class="h4 mb-3" x-text="feature.title"></h3>
@@ -113,7 +106,7 @@
       </section>
 
       <!-- Screenshots -->
-      <section class="screenshots mb-5">
+      <section id="previews" class="screenshots mb-5">
         <h2 class="text-center h2 fw-medium mb-5">See It In Action</h2>
         <div>
           <div class="screenshot-card row align-items-center mb-5">
@@ -176,13 +169,11 @@
         id="contact"
         class="waitlist-section bg-white rounded-3 p-5 border"
       >
-        <h2 class="text-center h2 fw-medium mb-4">Get In Touch</h2>
-        <p class="text-center text-muted mb-4">
-          Ready to elevate your content strategy? Let’s talk about how Brew Pilot can help.
-        </p>
+        <h2 class="text-center h2 fw-medium mb-4">Ready to elevate your content strategy?</h2>
+        <p style="height: 20px; margin: 0;"></p>
         <div class="text-center">
-          <a href="/contact.html" class="btn btn-primary text-white">
-            Contact Us
+          <a href="https://login.brewpilot.com/authorize?response_type=code&client_id=9G1eDIH7kdnwTHDToqsXoQ7q6g6pRw9M&redirect_uri=https%3A%2F%2Fapp.brewpilot.com%2Fcallback&audience=BrewPilotBackEnd&scope=openid%20profile%20email&screen_hint=signup" class="btn btn-primary text-white">
+            Start trial
           </a>
         </div>
       </section>
@@ -193,6 +184,8 @@
       <div class="footer__content container">
         <p class="mb-0">&copy; 2025 Brew Pilot. All rights reserved.</p>
         <nav class="footer__nav">
+          <a href="/contact.html">Contact Us</a>
+          <span class="divider">|</span>
           <a href="/termsgeneral.html">Terms of Use</a>
           <span class="divider">|</span>
           <a href="/privacy.html">Privacy Policy</a>
